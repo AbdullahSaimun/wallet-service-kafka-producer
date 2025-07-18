@@ -113,7 +113,7 @@ The Wallet Service is a Spring Boot 3 microservice that manages user wallet bala
 wallet-service/
 ├── src/
 │   ├── main/
-│   │   ├── java/com/example/walletservice/
+│   │   ├── java/com/example/wallet/
 │   │   │   ├── config/KafkaProducerConfig.java   # Kafka producer configuration
 │   │   │   ├── controller/WalletController.java  # REST API endpoint
 │   │   │   ├── dto/TransactionRequest.java       # DTO for Kafka messages
