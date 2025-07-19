@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
+import org.springframework.kafka.support.serializer.JsonDeserializer;
+import org.springframework.kafka.support.serializer.JsonSerializer;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,6 +25,9 @@ public class KafkaProducerConfig {
 		configProps.put(ProducerConfig.LINGER_MS_CONFIG, 10);
 		configProps.put(ProducerConfig.BATCH_SIZE_CONFIG, 16384);
 		configProps.put(ProducerConfig.COMPRESSION_TYPE_CONFIG, "gzip");
+		configProps.put(JsonDeserializer.TRUSTED_PACKAGES, "*");
+		configProps.put(JsonSerializer.ADD_TYPE_INFO_HEADERS, false);
+
 		return new DefaultKafkaProducerFactory<>(configProps);
 	}
 
