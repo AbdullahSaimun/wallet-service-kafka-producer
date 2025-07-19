@@ -18,5 +18,9 @@ spring:
         batch.size: 16384
         buffer.memory: 33554432
         compression.type: gzip
+kafka:
+  topic:
+    transaction: transaction-topic
+    notification: notification-topic
 server:
   port: 8081

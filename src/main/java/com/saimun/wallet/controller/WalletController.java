@@ -2,10 +2,7 @@ package com.saimun.wallet.controller;
 
 import com.saimun.wallet.dto.TransactionRequest;
 import com.saimun.wallet.service.WalletService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/wallet")
@@ -19,6 +16,12 @@ public class WalletController {
 	@PostMapping("/transaction")
 	public String initiateTransaction(@RequestBody TransactionRequest request) {
 		return walletService.initiateTransaction(request);
+	}
+
+
+	@GetMapping("/notification")
+	public String initiateNotification() {
+		return walletService.initiateNotificaion();
 	}
 
 
